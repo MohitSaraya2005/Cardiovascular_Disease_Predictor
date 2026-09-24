@@ -487,20 +487,27 @@ def apply_custom_css():
     }
 
     /* Sidebar Radio Button: FULL WIDTH EXPANDED TILES */
-    section[data-testid="stSidebar"] div[data-testid="stRadio"],
-    section[data-testid="stSidebar"] div[data-testid="stRadio"] > div,
-    section[data-testid="stSidebar"] div[role="radiogroup"] {
+    section[data-testid="stSidebar"] [data-testid="stRadio"],
+    section[data-testid="stSidebar"] [data-testid="stRadio"] > div,
+    section[data-testid="stSidebar"] div[role="radiogroup"],
+    section[data-testid="stSidebar"] div[data-baseweb="radio-group"] {
         background-color: transparent !important;
-        padding: 0.2rem 0 !important;
+        padding: 0 !important;
         border-radius: 0px !important;
         border: none !important;
         box-shadow: none !important;
         width: 100% !important;
+        min-width: 100% !important;
         display: flex !important;
         flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
     }
 
-    section[data-testid="stSidebar"] div[role="radiogroup"] > label {
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label,
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label[data-baseweb="radio"],
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label,
+    section[data-testid="stSidebar"] div[role="radiogroup"] label {
         background-color: #131E32 !important;
         color: #E2E8F0 !important;
         border-radius: 12px !important;
@@ -510,13 +517,22 @@ def apply_custom_css():
         font-weight: 600 !important;
         transition: all 0.22s ease-in-out !important;
         width: 100% !important;
+        min-width: 100% !important;
+        flex: 1 1 100% !important;
         display: flex !important;
         align-items: center !important;
+        justify-content: flex-start !important;
         box-sizing: border-box !important;
         cursor: pointer !important;
     }
 
-    section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label > div:last-child {
+        flex-grow: 1 !important;
+        width: 100% !important;
+    }
+
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover,
+    section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
         background: #1A2840 !important;
         border-color: #F59E0B !important;
         color: #FCD34D !important;
@@ -524,7 +540,9 @@ def apply_custom_css():
         transform: translateY(-1px);
     }
     
-    section[data-testid="stSidebar"] div[role="radiogroup"] > label[data-checked="true"] {
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label[data-checked="true"],
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked),
+    section[data-testid="stSidebar"] div[role="radiogroup"] label[data-checked="true"] {
         background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(13, 148, 136, 0.12) 100%) !important;
         border: 1px solid #14B8A6 !important;
         color: #2DD4BF !important;
@@ -533,7 +551,8 @@ def apply_custom_css():
     }
 
     /* Radio dot accent */
-    section[data-testid="stSidebar"] div[role="radiogroup"] input:checked + div {
+    section[data-testid="stSidebar"] div[role="radiogroup"] input:checked + div,
+    section[data-testid="stSidebar"] [data-testid="stRadio"] input:checked + div {
         border-color: #14B8A6 !important;
         background-color: #14B8A6 !important;
     }
