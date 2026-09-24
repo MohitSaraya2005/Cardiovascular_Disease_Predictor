@@ -43,7 +43,7 @@ def get_base64_image(file_path):
     return ""
 
 # -----------------------------------------------------------------------------
-# CUSTOM CSS DESIGN SYSTEM (Clinical Palette: Navy #1E3A8A, Teal #0D9488, Slate)
+# CUSTOM CSS DESIGN SYSTEM (Clinical Luxury Palette: Base #0B111E, Gold #F59E0B, Teal #0D9488)
 # -----------------------------------------------------------------------------
 def apply_custom_css():
     st.markdown(clean_html("""
@@ -54,10 +54,10 @@ def apply_custom_css():
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    /* Main Background */
+    /* Main Background matching #0B111E with subtle ambient lighting */
     .stApp {
-        background-color: #F8FAFC;
-        color: #0F172A;
+        background: radial-gradient(circle at 50% 0%, #131E32 0%, #0B111E 65%, #070B14 100%) !important;
+        color: #F8FAFC !important;
     }
     
     /* Top Main App Header & Padding Adjustments */
@@ -66,20 +66,21 @@ def apply_custom_css():
     }
 
     .block-container {
-        padding-top: 4rem !important;
-        padding-bottom: 2rem !important;
-        max-width: 1300px !important;
+        padding-top: 3.5rem !important;
+        padding-bottom: 2.5rem !important;
+        max-width: 1320px !important;
     }
     
-    /* Main Clinical Header Banner */
+    /* Main Clinical Header Banner with Golden Glow */
     .main-header {
-        background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
+        background: linear-gradient(135deg, #131E32 0%, #0B111E 100%);
         padding: 2.2rem 2.5rem;
-        border-radius: 16px;
+        border-radius: 18px;
         color: white;
-        box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
+        box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.08);
         margin-bottom: 1.5rem;
-        border-left: 6px solid #0D9488;
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        border-left: 6px solid #F59E0B;
         position: relative;
         overflow: hidden;
     }
@@ -90,7 +91,7 @@ def apply_custom_css():
         right: 20px;
         bottom: -10px;
         font-size: 7rem;
-        opacity: 0.12;
+        opacity: 0.10;
         pointer-events: none;
     }
     
@@ -110,17 +111,17 @@ def apply_custom_css():
         max-width: 800px;
     }
 
-    /* Hero Card Container matching exact reference screenshot */
+    /* Hero Card Container with Golden Outline and Rich Ambient Glow */
     .hero-banner-container {
-        background: linear-gradient(135deg, #050d1a 0%, #0a1b32 60%, #06152a 100%);
+        background: linear-gradient(135deg, #070D18 0%, #101B2E 60%, #0A1322 100%);
         border-radius: 20px;
         padding: 2.5rem 3rem;
         color: white;
-        box-shadow: 0 12px 35px -5px rgba(5, 13, 26, 0.4);
+        box-shadow: 0 15px 45px -5px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.12);
         margin-bottom: 2rem;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(245, 158, 11, 0.32);
     }
     
     .hero-title-text {
@@ -149,46 +150,56 @@ def apply_custom_css():
     }
     
     .hero-links-text a {
-        color: #94A3B8;
+        color: #FCD34D;
         text-decoration: underline;
-        transition: color 0.2s;
+        transition: all 0.2s ease;
     }
     
     .hero-links-text a:hover {
-        color: #38BDF8;
+        color: #F59E0B;
+        text-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
     }
 
-    /* Universal Medical Disclaimer Banner matching image */
+    /* Universal Medical Disclaimer Banner with Golden Accent */
     .disclaimer-banner {
-        background-color: #F8FAFC;
-        border: 1px solid #E2E8F0;
-        color: #334155;
-        padding: 0.65rem 1.2rem;
-        border-radius: 8px;
-        font-size: 0.84rem;
+        background: linear-gradient(90deg, rgba(19, 30, 50, 0.85) 0%, rgba(14, 23, 38, 0.85) 100%);
+        border: 1px solid rgba(245, 158, 11, 0.28);
+        color: #CBD5E1;
+        padding: 0.75rem 1.3rem;
+        border-radius: 12px;
+        font-size: 0.86rem;
         font-weight: 500;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
-        gap: 0.6rem;
+        gap: 0.75rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     
     .disclaimer-banner strong {
-        color: #0F172A;
+        color: #FCD34D;
         font-weight: 700;
     }
     
-    /* Impact Metric Card Styling */
+    /* Impact Metric Card Styling with Golden Outline */
     .impact-metric-card {
-        background: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 12px;
-        padding: 1.25rem 1.1rem;
-        box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+        background: linear-gradient(145deg, #131E32 0%, #0E1726 100%);
+        border: 1px solid rgba(245, 158, 11, 0.22);
+        border-top: 2px solid #F59E0B;
+        border-radius: 14px;
+        padding: 1.35rem 1.2rem;
+        box-shadow: 0 8px 25px -4px rgba(0, 0, 0, 0.45), 0 0 15px rgba(245, 158, 11, 0.05);
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transition: all 0.25s ease-in-out;
+    }
+    
+    .impact-metric-card:hover {
+        border-color: rgba(245, 158, 11, 0.55);
+        box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.15);
+        transform: translateY(-2px);
     }
     
     .impact-metric-top {
@@ -199,149 +210,183 @@ def apply_custom_css():
     }
     
     .impact-metric-val {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
         font-weight: 800;
-        color: #0F172A;
+        color: #F8FAFC;
         line-height: 1;
         letter-spacing: -0.5px;
     }
     
     .impact-metric-lbl {
-        font-size: 0.75rem;
+        font-size: 0.74rem;
         font-weight: 700;
-        color: #64748B;
+        color: #94A3B8;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        line-height: 1.3;
+        letter-spacing: 0.7px;
+        line-height: 1.35;
     }
 
-    /* Clinical Card Container */
+    /* Clinical Card Container with Golden Framing */
     .clinical-card {
-        background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 14px;
-        padding: 1.6rem;
-        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+        background: linear-gradient(145deg, #111C2E 0%, #0E1726 100%);
+        border: 1px solid rgba(245, 158, 11, 0.18);
+        border-radius: 16px;
+        padding: 1.8rem;
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(245, 158, 11, 0.04);
         margin-bottom: 1.5rem;
+        color: #F1F5F9;
     }
     
     .card-title {
-        color: #1E3A8A;
-        font-size: 1.2rem;
+        color: #FCD34D;
+        font-size: 1.22rem;
         font-weight: 700;
         margin-bottom: 1.2rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        border-bottom: 2px solid #F1F5F9;
-        padding-bottom: 0.6rem;
+        border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+        padding-bottom: 0.65rem;
+        letter-spacing: -0.3px;
     }
 
     /* Metric Display Box */
     .metric-card {
-        background: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 12px;
+        background: linear-gradient(145deg, #131E32 0%, #0E1726 100%);
+        border: 1px solid rgba(245, 158, 11, 0.22);
+        border-radius: 14px;
         padding: 1.25rem 1rem;
         text-align: center;
-        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
     
     .metric-value {
-        font-size: 1.85rem;
+        font-size: 1.9rem;
         font-weight: 800;
-        color: #1E3A8A;
+        color: #FCD34D;
         line-height: 1.2;
     }
     
     .metric-label {
         font-size: 0.82rem;
-        color: #64748B;
+        color: #94A3B8;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin-top: 0.3rem;
     }
 
-    /* Status Badges */
+    /* Status Badges with Golden & Neon Outlines */
     .badge-low-risk {
-        background-color: #DCFCE7;
-        color: #166534;
-        border: 1px solid #86EFAC;
-        padding: 0.45rem 1.2rem;
+        background: rgba(16, 185, 129, 0.15);
+        color: #34D399;
+        border: 1px solid #10B981;
+        box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+        padding: 0.5rem 1.4rem;
         border-radius: 9999px;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.02rem;
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.45rem;
     }
     
     .badge-high-risk {
-        background-color: #FEE2E2;
-        color: #991B1B;
-        border: 1px solid #FCA5A5;
-        padding: 0.45rem 1.2rem;
+        background: rgba(239, 68, 68, 0.15);
+        color: #F87171;
+        border: 1px solid #EF4444;
+        box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
+        padding: 0.5rem 1.4rem;
         border-radius: 9999px;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.02rem;
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.45rem;
     }
     
     .badge-normal {
-        background-color: #F0FDF4;
-        color: #15803D;
-        padding: 0.2rem 0.6rem;
-        border-radius: 6px;
-        font-size: 0.82rem;
+        background: rgba(16, 185, 129, 0.15);
+        color: #34D399;
+        border: 1px solid rgba(16, 185, 129, 0.4);
+        padding: 0.25rem 0.75rem;
+        border-radius: 8px;
+        font-size: 0.84rem;
         font-weight: 600;
     }
     
     .badge-warning {
-        background-color: #FEFCE8;
-        color: #A16207;
-        padding: 0.2rem 0.6rem;
-        border-radius: 6px;
-        font-size: 0.82rem;
+        background: rgba(245, 158, 11, 0.15);
+        color: #FCD34D;
+        border: 1px solid rgba(245, 158, 11, 0.5);
+        padding: 0.25rem 0.75rem;
+        border-radius: 8px;
+        font-size: 0.84rem;
         font-weight: 600;
     }
 
     .badge-danger {
-        background-color: #FEF2F2;
-        color: #B91C1C;
-        padding: 0.2rem 0.6rem;
-        border-radius: 6px;
-        font-size: 0.82rem;
+        background: rgba(239, 68, 68, 0.15);
+        color: #F87171;
+        border: 1px solid rgba(239, 68, 68, 0.5);
+        padding: 0.25rem 0.75rem;
+        border-radius: 8px;
+        font-size: 0.84rem;
         font-weight: 600;
     }
 
-    /* Input Field Labels */
-    label {
+    /* Input Field Labels in Dark Mode */
+    label, [data-testid="stWidgetLabel"] p {
         font-weight: 600 !important;
-        color: #334155 !important;
+        color: #CBD5E1 !important;
         font-size: 0.92rem !important;
     }
     
-    /* Primary CTA Button Styling */
-    div.stButton > button {
-        background: linear-gradient(135deg, #14B8A6 0%, #06B6D4 100%) !important;
-        color: #050D1A !important;
-        border: none !important;
-        padding: 0.75rem 2rem !important;
-        font-weight: 700 !important;
-        font-size: 1.02rem !important;
-        border-radius: 25px !important;
-        box-shadow: 0 4px 18px rgba(20, 184, 166, 0.35) !important;
-        transition: all 0.2s ease-in-out !important;
+    /* Input Controls Dark Theming */
+    div[data-baseweb="input"], div[data-baseweb="select"], div[data-baseweb="textarea"] {
+        background-color: #131E32 !important;
+        border: 1px solid rgba(245, 158, 11, 0.25) !important;
+        border-radius: 10px !important;
+        color: #F8FAFC !important;
     }
     
-    div.stButton > button:hover {
-        background: linear-gradient(135deg, #0D9488 0%, #0891B2 100%) !important;
-        box-shadow: 0 6px 22px rgba(20, 184, 166, 0.5) !important;
-        transform: translateY(-1px) !important;
-        color: #FFFFFF !important;
+    div[data-baseweb="input"]:focus-within, div[data-baseweb="select"]:focus-within, div[data-baseweb="textarea"]:focus-within {
+        border-color: #F59E0B !important;
+        box-shadow: 0 0 0 1px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.3) !important;
+    }
+    
+    input, select, textarea {
+        color: #F8FAFC !important;
+        background-color: #131E32 !important;
+    }
+    
+    /* Form Container Dark Styling */
+    div[data-testid="stForm"] {
+        background: linear-gradient(145deg, #111C2E 0%, #0E1726 100%) !important;
+        border: 1px solid rgba(245, 158, 11, 0.25) !important;
+        border-radius: 18px !important;
+        padding: 2rem !important;
+        box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.06) !important;
+    }
+    
+    /* Primary CTA Button with Rich Golden Gradient & Glow */
+    div.stButton > button, div.stFormSubmitButton > button, div[data-testid="stDownloadButton"] > button {
+        background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%) !important;
+        color: #070D18 !important;
+        border: 1px solid #FCD34D !important;
+        padding: 0.75rem 2.2rem !important;
+        font-weight: 800 !important;
+        font-size: 1.02rem !important;
+        border-radius: 25px !important;
+        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4) !important;
+        transition: all 0.22s ease-in-out !important;
+    }
+    
+    div.stButton > button:hover, div.stFormSubmitButton > button:hover, div[data-testid="stDownloadButton"] > button:hover {
+        background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
+        box-shadow: 0 6px 28px rgba(245, 158, 11, 0.65) !important;
+        transform: translateY(-2px) !important;
+        color: #000000 !important;
     }
 
     /* Hero specific button full width or inline override */
@@ -349,53 +394,72 @@ def apply_custom_css():
         width: auto !important;
     }
     
-    /* Premium ECG Dark Sidebar Styling */
+    /* Premium ECG Dark Sidebar Styling (#0B111E) */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #111827 0%, #0B111E 100%) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+        background: linear-gradient(180deg, #10192A 0%, #0B111E 100%) !important;
+        border-right: 1px solid rgba(245, 158, 11, 0.15) !important;
     }
 
     section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
         color: #E2E8F0 !important;
     }
 
-    /* Option Menu Custom Container Overrides */
+    /* Option Menu Custom Container Overrides (Borderless) */
     iframe[title="streamlit_option_menu.option_menu"] {
-        border-radius: 16px !important;
-        box-shadow: 0 0 35px rgba(13, 148, 136, 0.15) !important;
-    }
-
-    /* Sidebar Radio Button Fallback Match */
-    section[data-testid="stSidebar"] div[role="radiogroup"] {
-        background-color: #1A242F !important;
-        padding: 1rem !important;
-        border-radius: 16px !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        box-shadow: 0 0 30px rgba(13, 148, 136, 0.2) !important;
-    }
-
-    section[data-testid="stSidebar"] div[role="radiogroup"] label {
-        background-color: transparent !important;
-        color: #FFFFFF !important;
-        border-radius: 10px !important;
-        padding: 0.75rem 1rem !important;
-        margin-bottom: 0.3rem !important;
+        border-radius: 0px !important;
+        box-shadow: none !important;
         border: none !important;
+    }
+
+    /* Sidebar Radio Button: COMPLETELY REMOVE BOX OUTLINE */
+    section[data-testid="stSidebar"] div[role="radiogroup"] {
+        background-color: transparent !important;
+        padding: 0.2rem 0 !important;
+        border-radius: 0px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label {
+        background-color: rgba(255, 255, 255, 0.02) !important;
+        color: #E2E8F0 !important;
+        border-radius: 12px !important;
+        padding: 0.75rem 1rem !important;
+        margin-bottom: 0.5rem !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
         font-weight: 600 !important;
+        transition: all 0.25s ease !important;
     }
 
-    section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
-        background-color: rgba(255, 255, 255, 0.08) !important;
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+        background: rgba(245, 158, 11, 0.10) !important;
+        border-color: rgba(245, 158, 11, 0.45) !important;
+        color: #FCD34D !important;
+        transform: translateX(4px);
+    }
+    
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label[data-checked="true"] {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.12) 100%) !important;
+        border: 1px solid #F59E0B !important;
+        color: #FCD34D !important;
+        font-weight: 700 !important;
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.2) !important;
     }
 
-    /* Footer */
+    /* Radio dot accent */
+    section[data-testid="stSidebar"] div[role="radiogroup"] input:checked + div {
+        border-color: #F59E0B !important;
+        background-color: #F59E0B !important;
+    }
+
+    /* Footer with Golden Top Accent */
     .clinical-footer {
         text-align: center;
-        padding: 1.8rem;
-        color: #64748B;
-        font-size: 0.85rem;
-        border-top: 1px solid #E2E8F0;
-        margin-top: 3rem;
+        padding: 2rem;
+        color: #94A3B8;
+        font-size: 0.88rem;
+        border-top: 1px solid rgba(245, 158, 11, 0.2);
+        margin-top: 3.5rem;
     }
     </style>
     """), unsafe_allow_html=True)
@@ -481,27 +545,28 @@ def render_disclaimer():
     """), unsafe_allow_html=True)
 
 def render_risk_gauge(risk_percent):
-    """Plotly Semi-Circle Clinical Gauge Chart for Risk Score."""
+    """Plotly Semi-Circle Clinical Gauge Chart for Risk Score with Dark Luxury Gold Accents."""
+    bar_color = "#EF4444" if risk_percent >= 50 else ("#F59E0B" if risk_percent >= 35 else "#10B981")
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
         value=risk_percent,
         domain={'x': [0, 1], 'y': [0, 1]},
-        title={'text': "Calculated CVD Probability Score", 'font': {'size': 18, 'color': '#1E3A8A', 'family': 'Plus Jakarta Sans'}},
-        number={'suffix': "%", 'font': {'size': 42, 'color': '#1E3A8A', 'weight': 'bold'}},
+        title={'text': "Calculated CVD Probability Score", 'font': {'size': 18, 'color': '#FCD34D', 'family': 'Plus Jakarta Sans'}},
+        number={'suffix': "%", 'font': {'size': 44, 'color': '#F8FAFC', 'weight': 'bold'}},
         gauge={
-            'axis': {'range': [0, 100], 'tickwidth': 2, 'tickcolor': "#94A3B8"},
-            'bar': {'color': "#DC2626" if risk_percent >= 50 else ("#D97706" if risk_percent >= 35 else "#059669"), 'thickness': 0.3},
-            'bgcolor': "#FFFFFF",
-            'borderwidth': 2,
-            'bordercolor': "#E2E8F0",
+            'axis': {'range': [0, 100], 'tickwidth': 2, 'tickcolor': "#F59E0B", 'tickfont': {'color': '#94A3B8', 'size': 12}},
+            'bar': {'color': bar_color, 'thickness': 0.32},
+            'bgcolor': "rgba(19, 30, 50, 0.75)",
+            'borderwidth': 1.5,
+            'bordercolor': "rgba(245, 158, 11, 0.35)",
             'steps': [
-                {'range': [0, 35], 'color': '#DCFCE7'},
-                {'range': [35, 65], 'color': '#FEF3C7'},
-                {'range': [65, 100], 'color': '#FEE2E2'}
+                {'range': [0, 35], 'color': 'rgba(16, 185, 129, 0.22)'},
+                {'range': [35, 65], 'color': 'rgba(245, 158, 11, 0.22)'},
+                {'range': [65, 100], 'color': 'rgba(239, 68, 68, 0.25)'}
             ],
             'threshold': {
-                'line': {'color': "#991B1B", 'width': 4},
-                'thickness': 0.8,
+                'line': {'color': "#F59E0B", 'width': 3.5},
+                'thickness': 0.85,
                 'value': 50
             }
         }
@@ -511,7 +576,8 @@ def render_risk_gauge(risk_percent):
         height=300,
         margin=dict(l=30, r=30, t=50, b=20),
         paper_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Plus Jakarta Sans, sans-serif")
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(family="Plus Jakarta Sans, sans-serif", color="#F8FAFC")
     )
     return fig
 
@@ -524,15 +590,15 @@ def render_sidebar():
         st.markdown(clean_html("""
 <div style="position: relative; text-align: center; padding: 1.2rem 0 1rem 0; overflow: hidden;">
 <svg style="position: absolute; top: -10px; left: -10%; width: 120%; height: 120px; opacity: 0.15; pointer-events: none;" viewBox="0 0 500 100" preserveAspectRatio="none">
-<path d="M0,50 L120,50 L135,25 L150,75 L165,10 L180,90 L195,50 L210,50 L220,40 L230,60 L240,50 L500,50" fill="none" stroke="#14B8A6" stroke-width="2.5"/>
+<path d="M0,50 L120,50 L135,25 L150,75 L165,10 L180,90 L195,50 L210,50 L220,40 L230,60 L240,50 L500,50" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
 </svg>
 <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
-<div style="width: 64px; height: 64px; background: linear-gradient(135deg, #0284C7 0%, #0D9488 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(13, 148, 136, 0.45), 0 0 20px rgba(2, 132, 199, 0.35);">
+<div style="width: 64px; height: 64px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45), 0 0 20px rgba(245, 158, 11, 0.35); border: 1px solid #FCD34D;">
 <span style="font-size: 2.1rem;">🫀</span>
 </div>
 </div>
 <div style="font-size: 1.55rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px; text-align: center;">
-CardioPulse <span style="color: #14B8A6;">AI</span>
+CardioPulse <span style="color: #F59E0B;">AI</span>
 </div>
 <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; margin-top: 0.35rem; margin-bottom: 1.2rem;">
 CLINICAL INTELLIGENCE PLATFORM
@@ -562,14 +628,14 @@ CLINICAL INTELLIGENCE PLATFORM
                 default_index=default_idx,
                 styles={
                     "container": {
-                        "padding": "0.6rem 0.6rem!important", 
-                        "background-color": "#1A232E", 
-                        "border-radius": "16px",
-                        "border": "1px solid rgba(255, 255, 255, 0.08)",
-                        "box-shadow": "0 0 30px rgba(13, 148, 136, 0.22)"
+                        "padding": "0px!important", 
+                        "background-color": "transparent", 
+                        "border-radius": "0px",
+                        "border": "none",
+                        "box-shadow": "none"
                     },
                     "icon": {
-                        "color": "#14B8A6", 
+                        "color": "#F59E0B", 
                         "font-size": "1.2rem"
                     },
                     "nav-link": {
@@ -578,19 +644,22 @@ CLINICAL INTELLIGENCE PLATFORM
                         "margin": "0.35rem 0px", 
                         "padding": "0.75rem 1rem", 
                         "font-weight": "600",
-                        "color": "#FFFFFF", 
+                        "color": "#E2E8F0", 
                         "border-radius": "12px",
+                        "border": "1px solid rgba(255, 255, 255, 0.04)",
                         "transition": "all 0.2s ease"
                     },
                     "nav-link-hover": {
-                        "background-color": "rgba(255, 255, 255, 0.08)", 
-                        "color": "#FFFFFF"
+                        "background-color": "rgba(245, 158, 11, 0.10)", 
+                        "color": "#FCD34D",
+                        "border-color": "rgba(245, 158, 11, 0.35)"
                     },
                     "nav-link-selected": {
-                        "background": "linear-gradient(135deg, #0F766E 0%, #14B8A6 100%)", 
-                        "color": "#FFFFFF", 
+                        "background": "linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.15) 100%)", 
+                        "color": "#FCD34D", 
                         "font-weight": "700",
-                        "box-shadow": "0 4px 15px rgba(20, 184, 166, 0.4)"
+                        "border": "1px solid #F59E0B",
+                        "box-shadow": "0 0 15px rgba(245, 158, 11, 0.25)"
                     },
                 }
             )
@@ -605,7 +674,7 @@ CLINICAL INTELLIGENCE PLATFORM
         
         # Bottom Right Subtle Sparkle Icon ✦
         st.markdown(clean_html("""
-<div style="text-align: right; padding-right: 0.5rem; margin-top: 1.5rem; color: #14B8A6; font-size: 1.2rem; opacity: 0.7;">
+<div style="text-align: right; padding-right: 0.5rem; margin-top: 1.5rem; color: #F59E0B; font-size: 1.2rem; opacity: 0.85;">
 ✦
 </div>
 """), unsafe_allow_html=True)
@@ -613,38 +682,41 @@ CLINICAL INTELLIGENCE PLATFORM
         return selected_page
 
 # -----------------------------------------------------------------------------
-# PAGE 1: HOME OVERVIEW (EXACT MATCH TO REFERENCE DESIGN)
+# PAGE 1: HOME OVERVIEW (MATCHING DARK #0B111E & GOLDEN THEME)
 # -----------------------------------------------------------------------------
 def page_home():
     render_disclaimer()
     
-    # Hero Card Container matching reference screenshot exactly
+    # Hero Card Container matching dark theme with golden outline
     banner_b64 = get_base64_image("heart_banner.jpg")
     
     bg_banner_css = (
-        f"background: linear-gradient(90deg, #050D1A 0%, rgba(5, 13, 26, 0.95) 38%, rgba(5, 13, 26, 0.55) 65%, rgba(5, 13, 26, 0.15) 100%), url('{banner_b64}') right center / cover no-repeat;"
+        f"background: linear-gradient(90deg, #070D18 0%, rgba(11, 17, 30, 0.95) 40%, rgba(11, 17, 30, 0.65) 68%, rgba(11, 17, 30, 0.20) 100%), url('{banner_b64}') right center / cover no-repeat;"
         if banner_b64 else
-        "background: linear-gradient(135deg, #050d1a 0%, #0a1b32 60%, #06152a 100%);"
+        "background: linear-gradient(135deg, #070D18 0%, #101B2E 60%, #0A1322 100%);"
     )
     
-    # Integrated Hero Banner with deep-blended 3D glowing heart background texture
+    # Integrated Hero Banner with deep-blended 3D glowing heart background texture and golden outline
     st.markdown(clean_html(f"""
-    <div style="{bg_banner_css} border-radius: 20px; padding: 3.2rem 3.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 15px 40px -5px rgba(5, 13, 26, 0.5); margin-bottom: 2rem; position: relative; overflow: hidden; min-height: 280px; display: flex; align-items: center;">
+    <div style="{bg_banner_css} border-radius: 20px; padding: 3.2rem 3.5rem; color: white; border: 1px solid rgba(245, 158, 11, 0.35); box-shadow: 0 15px 45px -5px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.12); margin-bottom: 2rem; position: relative; overflow: hidden; min-height: 280px; display: flex; align-items: center;">
         <div style="max-width: 620px; position: relative; z-index: 2;">
+            <div style="display: inline-block; background: rgba(245, 158, 11, 0.12); border: 1px solid #F59E0B; color: #FCD34D; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 0.9rem;">
+                CLINICAL INTELLIGENCE PLATFORM
+            </div>
             <h1 style="font-size: 2.75rem; font-weight: 800; color: #FFFFFF !important; line-height: 1.15; margin: 0 0 0.9rem 0; letter-spacing: -0.5px;">
-                CardioPulse AI<br>
+                CardioPulse <span style="color: #F59E0B;">AI</span><br>
                 Intelligence Platform
             </h1>
             <p style="color: #94A3B8; font-size: 1.05rem; line-height: 1.55; margin-bottom: 2rem; font-weight: 400; max-width: 540px;">
                 Next-Generation Clinical Decision Support System for<br>Early Cardiovascular Disease Risk Stratification
             </p>
             <div style="margin-bottom: 1.2rem;">
-                <a href="?page=Risk+Assessment" target="_self" style="background: linear-gradient(135deg, #14B8A6 0%, #06B6D4 100%); color: #050D1A; font-weight: 700; font-size: 1rem; padding: 13px 32px; border-radius: 25px; text-decoration: none; display: inline-block; box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45); transition: all 0.2s ease;">
+                <a href="?page=Risk+Assessment" target="_self" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%); color: #070D18; font-weight: 800; font-size: 1rem; padding: 13px 32px; border-radius: 25px; text-decoration: none; display: inline-block; border: 1px solid #FCD34D; box-shadow: 0 4px 22px rgba(245, 158, 11, 0.45); transition: all 0.22s ease;">
                     Launch Risk Stratification Engine
                 </a>
             </div>
             <div style="font-size: 0.9rem; color: #94A3B8; font-weight: 500;">
-                <a href="#mission" style="color: #94A3B8; text-decoration: underline;">View Documentation</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="#mission" style="color: #94A3B8; text-decoration: underline;">Read Case Studies</a>
+                <a href="#mission" style="color: #FCD34D; text-decoration: underline;">View Documentation</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="#mission" style="color: #FCD34D; text-decoration: underline;">Read Case Studies</a>
             </div>
         </div>
     </div>
@@ -652,11 +724,11 @@ def page_home():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Key Global CVD Metrics Grid matching reference screenshot
+    # Key Global CVD Metrics Grid
     st.markdown(clean_html("""
     <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem;">
         <span style="font-size: 1.6rem; line-height: 1;">📊</span>
-        <h2 style="font-size: 1.45rem; font-weight: 700; color: #0F172A; margin: 0;">Global Cardiovascular Impact Metrics</h2>
+        <h2 style="font-size: 1.45rem; font-weight: 700; color: #FCD34D; margin: 0;">Global Cardiovascular Impact Metrics</h2>
     </div>
     """), unsafe_allow_html=True)
     
@@ -667,7 +739,7 @@ def page_home():
         <div class="impact-metric-card">
             <div class="impact-metric-top">
                 <span class="impact-metric-val">17.9M</span>
-                <svg viewBox="0 0 50 30" width="48" height="28" fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round">
+                <svg viewBox="0 0 50 30" width="48" height="28" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round">
                     <path d="M2,25 Q12,20 20,15 T35,8 T48,3" />
                 </svg>
             </div>
@@ -681,8 +753,8 @@ def page_home():
             <div class="impact-metric-top">
                 <span class="impact-metric-val">80%</span>
                 <svg viewBox="0 0 36 36" width="30" height="30">
-                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E2E8F0" stroke-width="4" />
-                    <path d="M18 2.0845 a 15.9155 15.9155 0 1 1 -12.5 5.2" fill="none" stroke="#64748B" stroke-width="4" stroke-linecap="round" />
+                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="4" />
+                    <path d="M18 2.0845 a 15.9155 15.9155 0 1 1 -12.5 5.2" fill="none" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" />
                 </svg>
             </div>
             <div class="impact-metric-lbl">PREVENTABLE VIA EARLY RISK STRATIFICATION</div>
@@ -715,52 +787,52 @@ def page_home():
     col_left, col_right = st.columns([6, 5])
     
     with col_left:
-        # Card 1: Mission & Clinical Vision
+        # Card 1: Mission & Clinical Vision with Golden Glow
         st.markdown(clean_html("""
-        <div class="clinical-card" id="mission" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF; position: relative; overflow: hidden; margin-bottom: 1.5rem;">
-            <svg style="position: absolute; right: -20px; bottom: -20px; width: 180px; height: 180px; opacity: 0.15; pointer-events: none;" viewBox="0 0 100 100">
-                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#0D9488" stroke-width="1.5" />
-                <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" fill="none" stroke="#0284C7" stroke-width="1" />
-                <line x1="50" y1="5" x2="50" y2="95" stroke="#0D9488" stroke-width="0.8" />
-                <line x1="5" y1="25" x2="95" y2="75" stroke="#0284C7" stroke-width="0.8" />
-                <line x1="5" y1="75" x2="95" y2="25" stroke="#0284C7" stroke-width="0.8" />
+        <div class="clinical-card" id="mission" style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
+            <svg style="position: absolute; right: -20px; bottom: -20px; width: 180px; height: 180px; opacity: 0.08; pointer-events: none;" viewBox="0 0 100 100">
+                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+                <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" fill="none" stroke="#FCD34D" stroke-width="1" />
+                <line x1="50" y1="5" x2="50" y2="95" stroke="#F59E0B" stroke-width="0.8" />
+                <line x1="5" y1="25" x2="95" y2="75" stroke="#FCD34D" stroke-width="0.8" />
+                <line x1="5" y1="75" x2="95" y2="25" stroke="#FCD34D" stroke-width="0.8" />
             </svg>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.15rem; color: #0F3759;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.15rem; color: #FCD34D;">
                     <span>🎯</span> Mission & Clinical Vision
                 </div>
-                <div style="font-weight: 800; font-size: 1.2rem; color: #0D9488; letter-spacing: -0.3px;">
-                    CardioPulse <span style="color: #0284C7;">AI</span>
+                <div style="font-weight: 800; font-size: 1.2rem; color: #F59E0B; letter-spacing: -0.3px;">
+                    CardioPulse <span style="color: #FCD34D;">AI</span>
                 </div>
             </div>
-            <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
-                Cardiovascular diseases (CVDs) remain the leading cause of morbidity and mortality worldwide. <strong>CardioPulse AI</strong> empowers healthcare practitioners and patients by providing non standardized physiologicales and behavioral biomarkers.
+            <p style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+                Cardiovascular diseases (CVDs) remain the leading cause of morbidity and mortality worldwide. <strong>CardioPulse AI</strong> empowers healthcare practitioners and patients by providing non-invasive, interpretable machine learning risk stratification across physiological and behavioral biomarkers.
             </p>
-            <div style="text-align: center; font-weight: 800; font-size: 1.1rem; color: #0F3759; margin: 1.4rem 0 1.2rem 0;">
+            <div style="text-align: center; font-weight: 800; font-size: 1.1rem; color: #FCD34D; margin: 1.4rem 0 1.2rem 0;">
                 Revolutionizing Cardiovascular Disease Prediction
             </div>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1rem;">
-                <div style="display: flex; align-items: center; gap: 0.6rem;">
-                    <div style="width: 36px; height: 36px; border-radius: 8px; background: #E0F2FE; display: flex; align-items: center; justify-content: center; color: #0284C7; font-size: 1.1rem; flex-shrink: 0;">
+                <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(255, 255, 255, 0.03); padding: 0.6rem; border-radius: 10px; border: 1px solid rgba(245, 158, 11, 0.15);">
+                    <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; color: #F59E0B; font-size: 1.1rem; flex-shrink: 0;">
                         ➔
                     </div>
-                    <div style="font-size: 0.72rem; font-weight: 800; color: #0F172A; text-transform: uppercase; line-height: 1.2;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #F8FAFC; text-transform: uppercase; line-height: 1.2;">
                         NON-INVASIVE<br>STRATIFICATION
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.6rem;">
-                    <div style="width: 36px; height: 36px; border-radius: 8px; background: #E6FFFA; display: flex; align-items: center; justify-content: center; color: #0D9488; font-size: 1.1rem; flex-shrink: 0;">
+                <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(255, 255, 255, 0.03); padding: 0.6rem; border-radius: 10px; border: 1px solid rgba(245, 158, 11, 0.15);">
+                    <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(13, 148, 136, 0.18); display: flex; align-items: center; justify-content: center; color: #14B8A6; font-size: 1.1rem; flex-shrink: 0;">
                         🖧
                     </div>
-                    <div style="font-size: 0.72rem; font-weight: 800; color: #0F172A; text-transform: uppercase; line-height: 1.2;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #F8FAFC; text-transform: uppercase; line-height: 1.2;">
                         INSTANT<br>BIOSENSOR<br>ANALYSIS
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.6rem;">
-                    <div style="width: 36px; height: 36px; border-radius: 8px; background: #F0FDF4; display: flex; align-items: center; justify-content: center; color: #16A34A; font-size: 1.1rem; flex-shrink: 0;">
+                <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(255, 255, 255, 0.03); padding: 0.6rem; border-radius: 10px; border: 1px solid rgba(245, 158, 11, 0.15);">
+                    <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(16, 185, 129, 0.18); display: flex; align-items: center; justify-content: center; color: #34D399; font-size: 1.1rem; flex-shrink: 0;">
                         📊
                     </div>
-                    <div style="font-size: 0.72rem; font-weight: 800; color: #0F172A; text-transform: uppercase; line-height: 1.2;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #F8FAFC; text-transform: uppercase; line-height: 1.2;">
                         INTERPRETABLE<br>RISK SCORES
                     </div>
                 </div>
@@ -770,56 +842,56 @@ def page_home():
         
         # Card 2: Core Capabilities
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF;">
-            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.15rem; color: #0F3759; margin-bottom: 1.2rem;">
-                <span style="color: #F97316;">⚡</span> Core Capabilities
+        <div class="clinical-card">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.15rem; color: #FCD34D; margin-bottom: 1.2rem;">
+                <span style="color: #F59E0B;">⚡</span> Core Capabilities
             </div>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem;">
-                <div style="border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF;">
-                    <div style="width: 42px; height: 42px; border-radius: 10px; background: #E0F2FE; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <div style="border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: rgba(255, 255, 255, 0.02);">
+                    <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
                         ⚖️
                     </div>
-                    <div style="font-weight: 700; font-size: 0.92rem; color: #0F172A;">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: #F8FAFC;">
                         BMI Calc
                     </div>
                 </div>
-                <div style="border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF;">
-                    <div style="width: 42px; height: 42px; border-radius: 10px; background: #FFEDD5; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <div style="border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: rgba(255, 255, 255, 0.02);">
+                    <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
                         📈
                     </div>
-                    <div style="font-weight: 700; font-size: 0.92rem; color: #0F172A;">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: #F8FAFC;">
                         Hemodynamics
                     </div>
                 </div>
-                <div style="border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF;">
-                    <div style="width: 42px; height: 42px; border-radius: 10px; background: #DCFCE7; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <div style="border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: rgba(255, 255, 255, 0.02);">
+                    <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
                         🎛️
                     </div>
-                    <div style="font-weight: 700; font-size: 0.92rem; color: #0F172A; line-height: 1.2;">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: #F8FAFC; line-height: 1.2;">
                         Risk<br>Spectrum
                     </div>
                 </div>
-                <div style="border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF;">
-                    <div style="width: 42px; height: 42px; border-radius: 10px; background: #FEF9C3; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                        🎛️
+                <div style="border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: rgba(255, 255, 255, 0.02);">
+                    <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                        🫀
                     </div>
-                    <div style="font-weight: 700; font-size: 0.92rem; color: #0F172A; line-height: 1.2;">
-                        Risk<br>Spectrum
+                    <div style="font-weight: 700; font-size: 0.92rem; color: #F8FAFC; line-height: 1.2;">
+                        ML Decision<br>Tree
                     </div>
                 </div>
-                <div style="border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF;">
-                    <div style="width: 42px; height: 42px; border-radius: 10px; background: #DBEAFE; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <div style="border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: rgba(255, 255, 255, 0.02);">
+                    <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
                         📋
                     </div>
-                    <div style="font-weight: 700; font-size: 0.92rem; color: #0F172A; line-height: 1.2;">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: #F8FAFC; line-height: 1.2;">
                         Clinical<br>Directives
                     </div>
                 </div>
-                <div style="border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF;">
-                    <div style="width: 42px; height: 42px; border-radius: 10px; background: #F3E8FF; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <div style="border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 0.85rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; background: rgba(255, 255, 255, 0.02);">
+                    <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
                         📑
                     </div>
-                    <div style="font-weight: 700; font-size: 0.92rem; color: #0F172A; line-height: 1.2;">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: #F8FAFC; line-height: 1.2;">
                         Exportable<br>Reports
                     </div>
                 </div>
@@ -828,25 +900,25 @@ def page_home():
         """), unsafe_allow_html=True)
         
     with col_right:
-        # Card 3: Ready for Assessment?
+        # Card 3: Ready for Assessment? with Golden Highlights
         st.markdown(clean_html("""
-        <div style="background: linear-gradient(180deg, #E6FFFA 0%, #D1FAF5 100%); border: 1px solid #A7F3D0; border-radius: 16px; padding: 1.8rem; box-shadow: 0 4px 20px -2px rgba(13, 148, 136, 0.08); margin-bottom: 1.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.35rem; color: #0F172A; margin-bottom: 0.9rem;">
+        <div style="background: linear-gradient(145deg, #131E32 0%, #0E1726 100%); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 16px; padding: 1.8rem; box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.08); margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.35rem; color: #FCD34D; margin-bottom: 0.9rem;">
                 <span>🚀</span> Ready for Assessment?
             </div>
-            <p style="color: #334155; font-size: 0.95rem; line-height: 1.55; margin-bottom: 1.5rem;">
-                Proceed to the interactive prediction workspace to input patient clinical metrics and generate a full risk analysis.
+            <p style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.55; margin-bottom: 1.5rem;">
+                Proceed to the interactive prediction workspace to input patient clinical metrics and generate a full risk analysis with calibrated probabilities.
             </p>
-            <a href="?page=Risk+Assessment" target="_self" style="display: block; text-align: center; background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); color: #FFFFFF; font-weight: 700; font-size: 0.95rem; padding: 12px 24px; border-radius: 25px; text-decoration: none; box-shadow: 0 4px 15px rgba(13, 148, 136, 0.35); letter-spacing: 0.5px;">
+            <a href="?page=Risk+Assessment" target="_self" style="display: block; text-align: center; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #070D18; font-weight: 800; font-size: 0.98rem; padding: 13px 24px; border-radius: 25px; text-decoration: none; border: 1px solid #FCD34D; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4); letter-spacing: 0.5px;">
                 START INTERACTIVE ASSESSMENT
             </a>
         </div>
         """), unsafe_allow_html=True)
         
-        # Card 4: Systolic BP Distribution Chart
+        # Card 4: Systolic BP Distribution Chart in Dark Mode
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.4rem; background: #FFFFFF;">
-            <div style="font-weight: 800; font-size: 1.2rem; color: #0F172A; margin-bottom: 0.4rem;">
+        <div class="clinical-card" style="margin-bottom: 0;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: #FCD34D; margin-bottom: 0.4rem;">
                 Systolic BP Distribution
             </div>
         """), unsafe_allow_html=True)
@@ -861,12 +933,12 @@ def page_home():
                     x="ap_hi", 
                     color="Target", 
                     labels={"ap_hi": "Systolic Blood Pressure (mmHg)", "count": "Count"},
-                    color_discrete_map={"Healthy": "#0D9488", "CVD Present": "#DC2626"},
+                    color_discrete_map={"Healthy": "#10B981", "CVD Present": "#F59E0B"},
                     barmode="group",
                     range_x=[85, 205],
                     nbins=24
                 )
-                fig_hist.update_traces(opacity=1.0, marker_line_width=0)
+                fig_hist.update_traces(opacity=0.9, marker_line_width=0)
                 fig_hist.update_layout(
                     height=260, 
                     bargap=0.25,
@@ -875,7 +947,8 @@ def page_home():
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
                     legend=dict(
-                        title=dict(text="Target", font=dict(size=12, family="Plus Jakarta Sans", weight="bold")),
+                        title=dict(text="Target", font=dict(size=12, family="Plus Jakarta Sans", color="#F8FAFC")),
+                        font=dict(family="Plus Jakarta Sans", color="#CBD5E1"),
                         orientation="v",
                         yanchor="top",
                         y=1,
@@ -885,18 +958,20 @@ def page_home():
                     xaxis=dict(
                         title="Systolic Blood Pressure (mmHg)",
                         showgrid=False,
-                        linecolor="#CBD5E1",
-                        tickfont=dict(family="Plus Jakarta Sans", size=11),
+                        linecolor="rgba(245, 158, 11, 0.3)",
+                        tickfont=dict(family="Plus Jakarta Sans", size=11, color="#94A3B8"),
+                        titlefont=dict(color="#CBD5E1"),
                         tickvals=[100, 150, 200]
                     ),
                     yaxis=dict(
                         title="Count",
                         showgrid=True,
-                        gridcolor="#F1F5F9",
-                        tickfont=dict(family="Plus Jakarta Sans", size=11),
+                        gridcolor="rgba(255, 255, 255, 0.05)",
+                        tickfont=dict(family="Plus Jakarta Sans", size=11, color="#94A3B8"),
+                        titlefont=dict(color="#CBD5E1"),
                         tickvals=[0, 500, 1000]
                     ),
-                    font=dict(family="Plus Jakarta Sans, sans-serif")
+                    font=dict(family="Plus Jakarta Sans, sans-serif", color="#F8FAFC")
                 )
                 st.plotly_chart(fig_hist, use_container_width=True)
             except Exception:
@@ -905,17 +980,17 @@ def page_home():
         st.markdown("</div>", unsafe_allow_html=True)
 
 def render_page_header(title, subtitle, badge_text="CLINICAL INTELLIGENCE PLATFORM"):
-    """Reusable Hero Banner across all pages with glowing 3D heart background texture."""
+    """Reusable Hero Banner across all pages with golden outline and glowing heart background."""
     banner_b64 = get_base64_image("heart_banner.jpg")
     bg_banner_css = (
-        f"background: linear-gradient(90deg, #050D1A 0%, rgba(5, 13, 26, 0.95) 42%, rgba(5, 13, 26, 0.55) 70%, rgba(5, 13, 26, 0.15) 100%), url('{banner_b64}') right center / cover no-repeat;"
+        f"background: linear-gradient(90deg, #070D18 0%, rgba(11, 17, 30, 0.95) 42%, rgba(11, 17, 30, 0.65) 70%, rgba(11, 17, 30, 0.20) 100%), url('{banner_b64}') right center / cover no-repeat;"
         if banner_b64 else
-        "background: linear-gradient(135deg, #050d1a 0%, #0a1b32 60%, #06152a 100%);"
+        "background: linear-gradient(135deg, #070D18 0%, #101B2E 60%, #0A1322 100%);"
     )
-    badge_html = f"<div style='display: inline-block; background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.4); color: #2DD4BF; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 0.8rem;'>{badge_text}</div>" if badge_text else ""
+    badge_html = f"<div style='display: inline-block; background: rgba(245, 158, 11, 0.12); border: 1px solid #F59E0B; color: #FCD34D; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 0.8rem;'>{badge_text}</div>" if badge_text else ""
     
     st.markdown(clean_html(f"""
-    <div style="{bg_banner_css} border-radius: 20px; padding: 2.6rem 3.2rem; color: white; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 15px 40px -5px rgba(5, 13, 26, 0.5); margin-bottom: 2rem; position: relative; overflow: hidden; min-height: 180px; display: flex; align-items: center;">
+    <div style="{bg_banner_css} border-radius: 20px; padding: 2.6rem 3.2rem; color: white; border: 1px solid rgba(245, 158, 11, 0.32); box-shadow: 0 15px 45px -5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.10); margin-bottom: 2rem; position: relative; overflow: hidden; min-height: 180px; display: flex; align-items: center;">
         <div style="max-width: 650px; position: relative; z-index: 2;">
             {badge_html}
             <h1 style="font-size: 2.4rem; font-weight: 800; color: #FFFFFF !important; line-height: 1.18; margin: 0 0 0.6rem 0; letter-spacing: -0.5px;">
@@ -946,7 +1021,7 @@ def page_risk_assessment():
     
     if error_msg:
         st.error(f"⚠️ **Model Initialization Error:** {error_msg}")
-        st.info("Please verify that `cardiovascular_decision_tree.pkl` is located in the working directory.")
+        st.info(f"Please verify that one of the model files ({', '.join(MODEL_FILES)}) is located in the working directory.")
         return
 
     # Assessment Form Container
@@ -954,7 +1029,7 @@ def page_risk_assessment():
         st.markdown(clean_html("""
         <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem;">
             <span style="font-size: 1.4rem;">📋</span>
-            <h2 style="font-size: 1.35rem; font-weight: 700; color: #0F172A; margin: 0;">Patient Clinical Input Form</h2>
+            <h2 style="font-size: 1.35rem; font-weight: 700; color: #FCD34D; margin: 0;">Patient Clinical Input Form</h2>
         </div>
         """), unsafe_allow_html=True)
         
@@ -1011,8 +1086,8 @@ def page_risk_assessment():
             bmi_color_class = "badge-danger"
             
         st.markdown(clean_html(f"""
-        <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; padding: 0.75rem 1.2rem; border-radius: 10px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-            <div><strong>Calculated BMI:</strong> <span style="font-size: 1.1rem; color: #0D9488; font-weight: 700;">{bmi_val} kg/m²</span></div>
+        <div style="background-color: #131E32; border: 1px solid rgba(245, 158, 11, 0.25); padding: 0.85rem 1.4rem; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+            <div><strong>Calculated BMI:</strong> <span style="font-size: 1.15rem; color: #FCD34D; font-weight: 800;">{bmi_val} kg/m²</span></div>
             <div>BMI Classification: <span class="{bmi_color_class}">{bmi_cat}</span></div>
         </div>
         """), unsafe_allow_html=True)
@@ -1143,7 +1218,7 @@ def page_risk_assessment():
             st.markdown(clean_html("""
             <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem;">
                 <span style="font-size: 1.5rem;">🔬</span>
-                <h2 style="font-size: 1.4rem; font-weight: 700; color: #0F172A; margin: 0;">Cardiovascular Risk Analysis Results</h2>
+                <h2 style="font-size: 1.4rem; font-weight: 700; color: #FCD34D; margin: 0;">Cardiovascular Risk Analysis Results</h2>
             </div>
             """), unsafe_allow_html=True)
             
@@ -1151,7 +1226,7 @@ def page_risk_assessment():
             
             with res_col1:
                 st.markdown(clean_html("""
-                <div class="clinical-card" style="text-align: center; border-radius: 16px; border: 1px solid #E2E8F0; padding: 1.8rem; background: #FFFFFF; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                <div class="clinical-card" style="text-align: center; border-radius: 16px; border: 1px solid rgba(245, 158, 11, 0.35); padding: 1.8rem; height: 100%; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.1);">
                     <div class="card-title" style="justify-content: center; border-bottom: none; margin-bottom: 0.5rem;">Clinical Classification</div>
                 """), unsafe_allow_html=True)
                 
@@ -1160,8 +1235,8 @@ def page_risk_assessment():
                     <div class="badge-high-risk" style="margin: 1rem 0;">
                         <span>🔴 ELEVATED CARDIOVASCULAR RISK</span>
                     </div>
-                    <p style="color: #991B1B; font-weight: 600; font-size: 0.95rem;">
-                        Patient demonstrates elevated risk markers for cardiovascular disease. Prompt medical follow-up is recommended.
+                    <p style="color: #F87171; font-weight: 600; font-size: 0.95rem;">
+                        Patient demonstrates elevated risk markers for cardiovascular disease. Prompt medical follow-up and clinical workup are recommended.
                     </p>
                     """), unsafe_allow_html=True)
                 else:
@@ -1169,7 +1244,7 @@ def page_risk_assessment():
                     <div class="badge-low-risk" style="margin: 1rem 0;">
                         <span>🟢 LOW CARDIOVASCULAR RISK</span>
                     </div>
-                    <p style="color: #166534; font-weight: 600; font-size: 0.95rem;">
+                    <p style="color: #34D399; font-weight: 600; font-size: 0.95rem;">
                         Biomarkers are within healthy ranges. Maintain preventative routine clinical monitoring and healthy lifestyle practices.
                     </p>
                     """), unsafe_allow_html=True)
@@ -1182,7 +1257,7 @@ def page_risk_assessment():
                 
             # DETAILED RISK FACTOR BREAKDOWN & DIRECTIVES
             st.markdown(clean_html("""
-            <div class="clinical-card" style="border-radius: 16px; border: 1px solid #E2E8F0; padding: 1.8rem; background: #FFFFFF; margin-top: 1.5rem;">
+            <div class="clinical-card" style="border: 1px solid rgba(245, 158, 11, 0.3); margin-top: 1.5rem;">
                 <div class="card-title">🔍 Clinical Risk Factor Analysis & Directives</div>
             """), unsafe_allow_html=True)
             
@@ -1275,7 +1350,7 @@ Not intended to serve as a standalone diagnostic device.
             )
 
 # -----------------------------------------------------------------------------
-# PAGE 3: ABOUT MODEL & CLINICAL RELEVANCE (WITH SAAS FEATURE MATRIX TABLE)
+# PAGE 3: ABOUT MODEL & CLINICAL RELEVANCE (WITH MODERN DATA TABLE)
 # -----------------------------------------------------------------------------
 def page_about():
     render_disclaimer()
@@ -1290,13 +1365,13 @@ def page_about():
     
     with col1:
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF; height: calc(100% - 1.5rem);">
+        <div class="clinical-card" style="height: calc(100% - 1.5rem);">
             <div class="card-title">🤖 Model Architecture & Pipeline</div>
-            <p style="color: #475569; line-height: 1.6;">
+            <p style="color: #CBD5E1; line-height: 1.6;">
                 The underlying engine utilizes a trained Decision Tree Classifier / Logistic Regression estimator optimized for high sensitivity and clinical interpretability.
             </p>
-            <ul style="color: #475569; line-height: 1.8; margin-left: -1rem;">
-                <li><strong>Model Binary File:</strong> <code>cardiovascular_decision_tree.pkl</code></li>
+            <ul style="color: #CBD5E1; line-height: 1.8; margin-left: -1rem;">
+                <li><strong>Model Binary File:</strong> <code>cardiovascular_logistic_regression.pkl</code></li>
                 <li><strong>Preprocessing Scaler:</strong> <code>StandardScaler</code> fitted on training continuous features (Age, Height, Weight, Systolic BP, Diastolic BP).</li>
                 <li><strong>Feature Dimension:</strong> 12 input features including auto-derived Body Mass Index.</li>
                 <li><strong>Target Variable:</strong> Binary CVD Presence (0 = Absent, 1 = Present).</li>
@@ -1306,12 +1381,12 @@ def page_about():
         
     with col2:
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF; height: calc(100% - 1.5rem);">
+        <div class="clinical-card" style="height: calc(100% - 1.5rem);">
             <div class="card-title">📚 Dataset & Training Methodology</div>
-            <p style="color: #475569; line-height: 1.6;">
+            <p style="color: #CBD5E1; line-height: 1.6;">
                 Trained on the standardized Kaggle Cardiovascular Disease Dataset consisting of <strong>70,000 anonymized patient observations</strong> collected during clinical examination.
             </p>
-            <p style="color: #475569; line-height: 1.6;">
+            <p style="color: #CBD5E1; line-height: 1.6;">
                 Rigorous cleaning was performed to filter out extreme physiological outliers (e.g., Systolic BP outside 70-250 mmHg or Diastolic BP outside 40-180 mmHg).
             </p>
         </div>
@@ -1319,131 +1394,131 @@ def page_about():
         
     # Full Width Custom SaaS Modern Data Table for Input Feature Matrix
     st.markdown(clean_html("""
-    <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF; box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04); margin-top: 1rem; margin-bottom: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; border-bottom: 2px solid #F1F5F9; padding-bottom: 0.8rem;">
-            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.25rem; color: #0F3759;">
+    <div class="clinical-card" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(245, 158, 11, 0.2); padding-bottom: 0.8rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.25rem; color: #FCD34D;">
                 <span>🔬</span> Input Feature Matrix
             </div>
-            <span style="font-size: 0.78rem; font-weight: 700; color: #0D9488; background: #E6FFFA; padding: 4px 12px; border-radius: 9999px; border: 1px solid #99F6E4;">12 CLINICAL BIOMARKERS</span>
+            <span style="font-size: 0.78rem; font-weight: 700; color: #F59E0B; background: rgba(245, 158, 11, 0.12); padding: 4px 12px; border-radius: 9999px; border: 1px solid #F59E0B;">12 CLINICAL BIOMARKERS</span>
         </div>
         
         <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-family: 'Plus Jakarta Sans', Inter, sans-serif; font-size: 0.9rem;">
+            <table style="width: 100%; border-collapse: collapse; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem;">
                 <thead>
-                    <tr style="background: #F8FAFC; border-bottom: 2px solid #E2E8F0; text-align: left;">
-                        <th style="padding: 14px 16px; font-weight: 700; font-size: 0.78rem; color: #475569; text-transform: uppercase; letter-spacing: 0.6px;">Feature Name</th>
-                        <th style="padding: 14px 16px; font-weight: 700; font-size: 0.78rem; color: #475569; text-transform: uppercase; letter-spacing: 0.6px;">Data Type</th>
-                        <th style="padding: 14px 16px; font-weight: 700; font-size: 0.78rem; color: #475569; text-transform: uppercase; letter-spacing: 0.6px;">Clinical Significance</th>
+                    <tr style="background: rgba(19, 30, 50, 0.9); border-bottom: 2px solid rgba(245, 158, 11, 0.35); text-align: left;">
+                        <th style="padding: 14px 16px; font-weight: 700; font-size: 0.78rem; color: #FCD34D; text-transform: uppercase; letter-spacing: 0.6px;">Feature Name</th>
+                        <th style="padding: 14px 16px; font-weight: 700; font-size: 0.78rem; color: #FCD34D; text-transform: uppercase; letter-spacing: 0.6px;">Data Type</th>
+                        <th style="padding: 14px 16px; font-weight: 700; font-size: 0.78rem; color: #FCD34D; text-transform: uppercase; letter-spacing: 0.6px;">Clinical Significance</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🎂</span> Age
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Continuous (Yrs)</span>
+                            <span style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Continuous (Yrs)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Primary non-modifiable cardiovascular aging risk factor</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Primary non-modifiable cardiovascular aging risk factor</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">⚧</span> Gender
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #EDE9FE; color: #6D28D9; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Categorical (1/2)</span>
+                            <span style="background: rgba(168, 85, 247, 0.15); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Categorical (1/2)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Biological gender-specific baseline epidemiological incidence</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Biological gender-specific baseline epidemiological incidence</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">📏</span> Height
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Continuous (cm)</span>
+                            <span style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Continuous (cm)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Anthropometric reference for Body Surface Area indexing</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Anthropometric reference for Body Surface Area indexing</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">⚖️</span> Weight
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Continuous (kg)</span>
+                            <span style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Continuous (kg)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Body mass index calibration and metabolic loading indicator</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Body mass index calibration and metabolic loading indicator</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🩺</span> Systolic BP (ap_hi)
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Continuous (mmHg)</span>
+                            <span style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Continuous (mmHg)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Primary hemodynamic hypertension marker & vascular strain</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Primary hemodynamic hypertension marker & vascular strain</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🩺</span> Diastolic BP (ap_lo)
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Continuous (mmHg)</span>
+                            <span style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Continuous (mmHg)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Resting vascular peripheral resistance marker</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Resting vascular peripheral resistance marker</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🧪</span> Cholesterol
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #F3E8FF; color: #7E22CE; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Ordinal (1, 2, 3)</span>
+                            <span style="background: rgba(168, 85, 247, 0.15); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Ordinal (1, 2, 3)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Atherosclerosis and coronary plaque accumulation risk</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Atherosclerosis and coronary plaque accumulation risk</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🩸</span> Glucose
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #F3E8FF; color: #7E22CE; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Ordinal (1, 2, 3)</span>
+                            <span style="background: rgba(168, 85, 247, 0.15); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Ordinal (1, 2, 3)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Hyperglycemia / diabetic microvascular damage risk factor</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Hyperglycemia / diabetic microvascular damage risk factor</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🚬</span> Smoking
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #CCFBF1; color: #0F766E; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Binary (0/1)</span>
+                            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Binary (0/1)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Direct endothelial injury & arterial vasoconstriction trigger</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Direct endothelial injury & arterial vasoconstriction trigger</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🍷</span> Alcohol Intake
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #CCFBF1; color: #0F766E; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Binary (0/1)</span>
+                            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Binary (0/1)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Hepatovascular metabolic stress and rhythm disturbance driver</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Hepatovascular metabolic stress and rhythm disturbance driver</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #F1F5F9;">
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🏃</span> Physical Activity
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #CCFBF1; color: #0F766E; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Binary (0/1)</span>
+                            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Binary (0/1)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Protective metabolic & cardiopulmonary conditioning index</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Protective metabolic & cardiopulmonary conditioning index</td>
                     </tr>
                     <tr>
-                        <td style="padding: 14px 16px; font-weight: 600; color: #0F172A;">
+                        <td style="padding: 14px 16px; font-weight: 600; color: #F8FAFC;">
                             <span style="margin-right: 8px;">🧮</span> BMI Index
                         </td>
                         <td style="padding: 14px 16px;">
-                            <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 9999px; display: inline-block;">Continuous (kg/m²)</span>
+                            <span style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 9999px; display: inline-block;">Continuous (kg/m²)</span>
                         </td>
-                        <td style="padding: 14px 16px; color: #475569; font-size: 0.88rem;">Computed adiposity index and metabolic syndrome biomarker</td>
+                        <td style="padding: 14px 16px; color: #CBD5E1; font-size: 0.88rem;">Computed adiposity index and metabolic syndrome biomarker</td>
                     </tr>
                 </tbody>
             </table>
@@ -1452,9 +1527,9 @@ def page_about():
     """), unsafe_allow_html=True)
         
     st.markdown(clean_html("""
-    <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF; margin-bottom: 1.5rem;">
+    <div class="clinical-card" style="margin-bottom: 1.5rem;">
         <div class="card-title">⚖️ Clinical Relevance & Evidence Base</div>
-        <p style="color: #475569; line-height: 1.6;">
+        <p style="color: #CBD5E1; line-height: 1.6;">
             Elevated systolic blood pressure (hypertension), high serum cholesterol, and elevated Body Mass Index (BMI) are universally recognized by the World Health Organization (WHO) and American Heart Association (AHA) as primary modifiable drivers of atherosclerosis, coronary artery disease, and stroke. Early identification through automated risk stratification tools provides a vital window for primary intervention before irreversible organ damage occurs.
         </p>
     </div>
@@ -1476,7 +1551,7 @@ def page_contact():
     
     with col1:
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF;">
+        <div class="clinical-card">
             <div class="card-title">✉️ Submit an Inquiry</div>
         """), unsafe_allow_html=True)
         
@@ -1498,26 +1573,26 @@ def page_contact():
         
     with col2:
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF; margin-bottom: 1.5rem;">
+        <div class="clinical-card" style="margin-bottom: 1.5rem;">
             <div class="card-title">📞 Urgent Support Contacts</div>
-            <p style="color: #475569; font-size: 0.95rem;">
-                <strong>CardioPulse AI Technical Response Center</strong><br>
+            <p style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.6;">
+                <strong style="color: #F8FAFC;">CardioPulse AI Technical Response Center</strong><br>
                 🏢 Medical Health Informatics Center<br>
-                📧 Email: <code>support@cardiopulse-ai.org</code><br>
-                ☎️ Hotline: <code>+1 (800) 555-CARDIO</code>
+                📧 Email: <code style="color: #FCD34D; background: rgba(245, 158, 11, 0.1);">support@cardiopulse-ai.org</code><br>
+                ☎️ Hotline: <code style="color: #FCD34D; background: rgba(245, 158, 11, 0.1);">+1 (800) 555-CARDIO</code>
             </p>
-            <hr style="border-top: 1px solid #E2E8F0; margin: 1rem 0;">
-            <div style="background-color: #FEE2E2; padding: 1rem; border-radius: 10px; border: 1px solid #FCA5A5;">
-                <strong style="color: #991B1B;">🚨 Medical Emergency Alert:</strong><br>
-                <span style="color: #7F1D1D; font-size: 0.88rem;">If a patient is experiencing acute chest pain, shortness of breath, or sudden weakness, immediately initiate emergency protocol and call <strong>911 / 112</strong>. Do NOT rely on software screening during acute events.</span>
+            <hr style="border-top: 1px solid rgba(245, 158, 11, 0.2); margin: 1rem 0;">
+            <div style="background: rgba(239, 68, 68, 0.15); padding: 1rem; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.4);">
+                <strong style="color: #F87171;">🚨 Medical Emergency Alert:</strong><br>
+                <span style="color: #FECACA; font-size: 0.88rem; line-height: 1.45; display: inline-block; margin-top: 0.3rem;">If a patient is experiencing acute chest pain, shortness of breath, or sudden weakness, immediately initiate emergency protocol and call <strong>911 / 112</strong>. Do NOT rely on software screening during acute events.</span>
             </div>
         </div>
         """), unsafe_allow_html=True)
         
         st.markdown(clean_html("""
-        <div class="clinical-card" style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.6rem; background: #FFFFFF;">
+        <div class="clinical-card">
             <div class="card-title">🔒 Privacy & Compliance</div>
-            <p style="color: #475569; font-size: 0.88rem; line-height: 1.5;">
+            <p style="color: #CBD5E1; font-size: 0.88rem; line-height: 1.6;">
                 CardioPulse AI operates under strict data privacy principles. Patient inputs submitted during session evaluation are processed ephemerally in memory and are never persisted to external database storage without explicit patient authorization.
             </p>
         </div>
