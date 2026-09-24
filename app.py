@@ -369,24 +369,24 @@ def apply_custom_css():
         box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.06) !important;
     }
     
-    /* Primary CTA Button with Rich Golden Gradient & Glow */
+    /* Primary CTA Button with Previous Teal & Cyan Gradient Fill */
     div.stButton > button, div.stFormSubmitButton > button, div[data-testid="stDownloadButton"] > button {
-        background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%) !important;
-        color: #070D18 !important;
-        border: 1px solid #FCD34D !important;
+        background: linear-gradient(135deg, #14B8A6 0%, #06B6D4 100%) !important;
+        color: #050D1A !important;
+        border: none !important;
         padding: 0.75rem 2.2rem !important;
-        font-weight: 800 !important;
+        font-weight: 700 !important;
         font-size: 1.02rem !important;
         border-radius: 25px !important;
-        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4) !important;
+        box-shadow: 0 4px 18px rgba(20, 184, 166, 0.4) !important;
         transition: all 0.22s ease-in-out !important;
     }
     
     div.stButton > button:hover, div.stFormSubmitButton > button:hover, div[data-testid="stDownloadButton"] > button:hover {
-        background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
-        box-shadow: 0 6px 28px rgba(245, 158, 11, 0.65) !important;
+        background: linear-gradient(135deg, #0D9488 0%, #0891B2 100%) !important;
+        box-shadow: 0 6px 24px rgba(20, 184, 166, 0.55) !important;
         transform: translateY(-2px) !important;
-        color: #000000 !important;
+        color: #FFFFFF !important;
     }
 
     /* Hero specific button full width or inline override */
@@ -593,12 +593,12 @@ def render_sidebar():
 <path d="M0,50 L120,50 L135,25 L150,75 L165,10 L180,90 L195,50 L210,50 L220,40 L230,60 L240,50 L500,50" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
 </svg>
 <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
-<div style="width: 64px; height: 64px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45), 0 0 20px rgba(245, 158, 11, 0.35); border: 1px solid #FCD34D;">
+<div style="width: 64px; height: 64px; background: linear-gradient(135deg, #0284C7 0%, #0D9488 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(13, 148, 136, 0.45), 0 0 20px rgba(2, 132, 199, 0.35);">
 <span style="font-size: 2.1rem;">🫀</span>
 </div>
 </div>
 <div style="font-size: 1.55rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px; text-align: center;">
-CardioPulse <span style="color: #F59E0B;">AI</span>
+CardioPulse <span style="color: #14B8A6;">AI</span>
 </div>
 <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; margin-top: 0.35rem; margin-bottom: 1.2rem;">
 CLINICAL INTELLIGENCE PLATFORM
@@ -711,7 +711,7 @@ def page_home():
                 Next-Generation Clinical Decision Support System for<br>Early Cardiovascular Disease Risk Stratification
             </p>
             <div style="margin-bottom: 1.2rem;">
-                <a href="?page=Risk+Assessment" target="_self" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%); color: #070D18; font-weight: 800; font-size: 1rem; padding: 13px 32px; border-radius: 25px; text-decoration: none; display: inline-block; border: 1px solid #FCD34D; box-shadow: 0 4px 22px rgba(245, 158, 11, 0.45); transition: all 0.22s ease;">
+                <a href="?page=Risk+Assessment" target="_self" style="background: linear-gradient(135deg, #14B8A6 0%, #06B6D4 100%); color: #050D1A; font-weight: 700; font-size: 1rem; padding: 13px 32px; border-radius: 25px; text-decoration: none; display: inline-block; box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45); transition: all 0.2s ease;">
                     Launch Risk Stratification Engine
                 </a>
             </div>
@@ -909,7 +909,7 @@ def page_home():
             <p style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.55; margin-bottom: 1.5rem;">
                 Proceed to the interactive prediction workspace to input patient clinical metrics and generate a full risk analysis with calibrated probabilities.
             </p>
-            <a href="?page=Risk+Assessment" target="_self" style="display: block; text-align: center; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #070D18; font-weight: 800; font-size: 0.98rem; padding: 13px 24px; border-radius: 25px; text-decoration: none; border: 1px solid #FCD34D; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4); letter-spacing: 0.5px;">
+            <a href="?page=Risk+Assessment" target="_self" style="display: block; text-align: center; background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); color: #FFFFFF; font-weight: 700; font-size: 0.95rem; padding: 12px 24px; border-radius: 25px; text-decoration: none; box-shadow: 0 4px 15px rgba(13, 148, 136, 0.35); letter-spacing: 0.5px;">
                 START INTERACTIVE ASSESSMENT
             </a>
         </div>
