@@ -342,22 +342,97 @@ def apply_custom_css():
         font-size: 0.92rem !important;
     }
     
-    /* Input Controls Dark Theming */
-    div[data-baseweb="input"], div[data-baseweb="select"], div[data-baseweb="textarea"] {
+    /* Input Controls Dark Theming (Merge with #0B111E / #131E32) */
+    div[data-testid="stTextInput"] div[data-baseweb="base-input"],
+    div[data-testid="stNumberInput"] div[data-baseweb="base-input"],
+    div[data-testid="stTextArea"] div[data-baseweb="base-input"],
+    div[data-baseweb="input"],
+    div[data-baseweb="base-input"],
+    div[data-baseweb="select"],
+    div[data-baseweb="select"] > div,
+    div[data-baseweb="select"] span,
+    div[data-baseweb="textarea"] {
         background-color: #131E32 !important;
-        border: 1px solid rgba(245, 158, 11, 0.25) !important;
+        border: 1px solid rgba(245, 158, 11, 0.28) !important;
         border-radius: 10px !important;
         color: #F8FAFC !important;
     }
     
-    div[data-baseweb="input"]:focus-within, div[data-baseweb="select"]:focus-within, div[data-baseweb="textarea"]:focus-within {
+    div[data-baseweb="input"]:focus-within, 
+    div[data-baseweb="base-input"]:focus-within,
+    div[data-baseweb="select"]:focus-within, 
+    div[data-baseweb="textarea"]:focus-within {
         border-color: #F59E0B !important;
         box-shadow: 0 0 0 1px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.3) !important;
     }
     
-    input, select, textarea {
-        color: #F8FAFC !important;
+    /* Textbox, Number Input & Textarea Inner Elements */
+    div[data-baseweb="base-input"] input,
+    div[data-baseweb="base-input"] textarea,
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
         background-color: #131E32 !important;
+        color: #F8FAFC !important;
+        -webkit-text-fill-color: #F8FAFC !important;
+    }
+
+    /* Number Input Stepper (+ / -) Buttons */
+    div[data-testid="stNumberInput"] button {
+        background-color: #1A2840 !important;
+        color: #FCD34D !important;
+        border: 1px solid rgba(245, 158, 11, 0.2) !important;
+    }
+    div[data-testid="stNumberInput"] button:hover {
+        background-color: #243B5E !important;
+        color: #F59E0B !important;
+    }
+
+    /* Dropdown Popover Listbox (The opened dropdown options menu) */
+    div[data-baseweb="popover"],
+    div[data-baseweb="popover"] > div,
+    ul[role="listbox"],
+    div[data-baseweb="menu"] {
+        background-color: #111C2E !important;
+        border: 1px solid rgba(245, 158, 11, 0.35) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(245, 158, 11, 0.12) !important;
+    }
+
+    li[role="option"] {
+        background-color: #111C2E !important;
+        color: #F8FAFC !important;
+        padding: 0.65rem 1rem !important;
+        transition: all 0.15s ease !important;
+    }
+
+    li[role="option"]:hover,
+    li[role="option"][aria-selected="true"] {
+        background-color: #1A2840 !important;
+        color: #FCD34D !important;
+    }
+
+    /* Horizontal Radio Option Buttons in Assessment Form */
+    div[data-testid="stRadio"] div[role="radiogroup"] {
+        background: transparent !important;
+        border: none !important;
+        gap: 0.6rem !important;
+    }
+
+    div[data-testid="stRadio"] div[role="radiogroup"] label {
+        background-color: #131E32 !important;
+        border: 1px solid rgba(245, 158, 11, 0.22) !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 8px !important;
+        color: #CBD5E1 !important;
+        transition: all 0.2s ease !important;
+    }
+
+    div[data-testid="stRadio"] div[role="radiogroup"] label:hover {
+        background-color: #1A2840 !important;
+        border-color: rgba(245, 158, 11, 0.45) !important;
+        color: #FCD34D !important;
     }
     
     /* Form Container Dark Styling */
