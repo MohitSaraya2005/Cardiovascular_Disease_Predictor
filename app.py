@@ -486,45 +486,56 @@ def apply_custom_css():
         border: none !important;
     }
 
-    /* Sidebar Radio Button: COMPLETELY REMOVE BOX OUTLINE */
+    /* Sidebar Radio Button: FULL WIDTH EXPANDED TILES */
+    section[data-testid="stSidebar"] div[data-testid="stRadio"],
+    section[data-testid="stSidebar"] div[data-testid="stRadio"] > div,
     section[data-testid="stSidebar"] div[role="radiogroup"] {
         background-color: transparent !important;
         padding: 0.2rem 0 !important;
         border-radius: 0px !important;
         border: none !important;
         box-shadow: none !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     section[data-testid="stSidebar"] div[role="radiogroup"] > label {
-        background-color: rgba(255, 255, 255, 0.02) !important;
+        background-color: #131E32 !important;
         color: #E2E8F0 !important;
         border-radius: 12px !important;
-        padding: 0.75rem 1rem !important;
-        margin-bottom: 0.5rem !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        padding: 0.85rem 1.15rem !important;
+        margin-bottom: 0.65rem !important;
+        border: 1px solid rgba(245, 158, 11, 0.22) !important;
         font-weight: 600 !important;
-        transition: all 0.25s ease !important;
+        transition: all 0.22s ease-in-out !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
     }
 
     section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
-        background: rgba(245, 158, 11, 0.10) !important;
-        border-color: rgba(245, 158, 11, 0.45) !important;
+        background: #1A2840 !important;
+        border-color: #F59E0B !important;
         color: #FCD34D !important;
-        transform: translateX(4px);
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15) !important;
+        transform: translateY(-1px);
     }
     
     section[data-testid="stSidebar"] div[role="radiogroup"] > label[data-checked="true"] {
-        background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.12) 100%) !important;
-        border: 1px solid #F59E0B !important;
-        color: #FCD34D !important;
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(13, 148, 136, 0.12) 100%) !important;
+        border: 1px solid #14B8A6 !important;
+        color: #2DD4BF !important;
         font-weight: 700 !important;
-        box-shadow: 0 0 15px rgba(245, 158, 11, 0.2) !important;
+        box-shadow: 0 0 16px rgba(20, 184, 166, 0.25) !important;
     }
 
     /* Radio dot accent */
     section[data-testid="stSidebar"] div[role="radiogroup"] input:checked + div {
-        border-color: #F59E0B !important;
-        background-color: #F59E0B !important;
+        border-color: #14B8A6 !important;
+        background-color: #14B8A6 !important;
     }
 
     /* Footer with Golden Top Accent */
