@@ -403,19 +403,25 @@ def apply_custom_css():
 # -----------------------------------------------------------------------------
 # BACKEND MODEL & SCALER UTILITIES
 # -----------------------------------------------------------------------------
-MODEL_FILE = "cardiovascular_decision_tree.pkl"
+MODEL_FILES = ["cardiovascular_logistic_regression.pkl", "cardiovascular_decision_tree.pkl"]
 DATA_FILE = "cardio_train.csv"
 
 @st.cache_resource
 def load_ml_model():
     """Safely load the pre-trained cardiovascular machine learning model."""
-    if not os.path.exists(MODEL_FILE):
-        return None, f"Model file '{MODEL_FILE}' not found in root directory."
+    found_file = None
+    for mf in MODEL_FILES:
+        if os.path.exists(mf):
+            found_file = mf
+            break
+            
+    if not found_file:
+        return None, f"Model file not found in root directory (checked: {', '.join(MODEL_FILES)})."
     try:
-        model = joblib.load(MODEL_FILE)
+        model = joblib.load(found_file)
         return model, None
     except Exception as e:
-        return None, f"Failed to load model file: {str(e)}"
+        return None, f"Failed to load model file '{found_file}': {str(e)}"
 
 @st.cache_resource
 def load_feature_scaler():
